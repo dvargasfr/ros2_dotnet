@@ -16,6 +16,7 @@
 // Based on http://dimitry-i.blogspot.com.es/2013/01/mononet-how-to-dynamically-load-native.html
 
 using System;
+using System.Diagnostics;
 using System.Runtime;
 using System.Runtime.InteropServices;
 
@@ -126,14 +127,19 @@ namespace ROS2 {
 
       private static Platform CheckPlatform () {
         if (IsUnix ()) {
+          Debug.WriteLine("####### CheckPlatform: Unix");
           return Platform.Unix;
         } else if (IsMacOSX ()) {
+          Debug.WriteLine("####### CheckPlatform: MacOSX");
           return Platform.MacOSX;
         } else if (IsWindowsDesktop ()) {
+          Debug.WriteLine("####### CheckPlatform: WindowsDesktop");
           return Platform.WindowsDesktop;
         } else if (IsUWP ()) {
+          Debug.WriteLine("####### CheckPlatform: UWP");
           return Platform.UWP;
         } else {
+          Debug.WriteLine("####### CheckPlatform: Unknown");
           return Platform.Unknown;
         }
       }
@@ -168,8 +174,10 @@ namespace ROS2 {
         string libraryName = fileName + "_native.dll";
         IntPtr ptr = LoadPackagedLibrary (libraryName);
         if (ptr == IntPtr.Zero) {
+          Debug.WriteLine("####### Fail loading {0} ", libraryName);
           throw new UnsatisfiedLinkError (libraryName);
         }
+        Debug.WriteLine("####### Success loading {0} ", libraryName);
         return ptr;
       }
     }
