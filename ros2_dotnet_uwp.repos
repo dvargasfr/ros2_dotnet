@@ -65,9 +65,25 @@ repositories:
     version: uwp-noenv
   ros2_dotnet/dotnet_cmake_module:
     type: git
-    url: https://github.com/esteve/dotnet_cmake_module.git
-    version: master
+    url: https://github.com/fmrico/dotnet_cmake_module.git
+    version: xunit_tests
   ros2_dotnet/ros2_dotnet:
     type: git
-    url: https://github.com/esteve/ros2_dotnet.git
+    url: https://github.com/dvargasfr/ros2_dotnet.git
+    version: develop
+  ros2/geometry2:
+    type: git
+    url: https://github.com/IntelligentRoboticsLabs/geometry2.git
+    version: rcldotnet
+  ros2/console_bridge_vendor:
+    type: git
+    url: https://github.com/ros2/console_bridge_vendor.git
+    version: 1.1.0
+  ros2/rclcpp:
+    type: git
+    url: https://github.com/fmrico/rclcpp.git
+    version: uwp32
+  ros2/poco_vendor:
+    type: git
+    url: https://github.com/ros2/poco_vendor.git
     version: master
