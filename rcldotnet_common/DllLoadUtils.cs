@@ -132,12 +132,12 @@ namespace ROS2 {
         } else if (IsMacOSX ()) {
           Debug.WriteLine("####### CheckPlatform: MacOSX");
           return Platform.MacOSX;
-        } else if (IsWindowsDesktop ()) {
-          Debug.WriteLine("####### CheckPlatform: WindowsDesktop");
-          return Platform.WindowsDesktop;
         } else if (IsUWP ()) {
           Debug.WriteLine("####### CheckPlatform: UWP");
           return Platform.UWP;
+        } else if (IsWindowsDesktop ()) {
+          Debug.WriteLine("####### CheckPlatform: WindowsDesktop");
+          return Platform.WindowsDesktop;
         } else {
           Debug.WriteLine("####### CheckPlatform: Unknown");
           return Platform.Unknown;
